@@ -12,3 +12,6 @@ eg: confusion_df = cramersV(test_df)
     ClmDiagnosisCode_1	1.000000	          0.176665	          0.187273
     ClmDiagnosisCode_2	0.176665	          1.000000	          0.115215
     ClmDiagnosisCode_3	0.187273	          0.115215	          1.000000
+
+
+NOTE: Currently code is slow, feel free to update code to improve speed

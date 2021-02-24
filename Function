@@ -1,0 +1,20 @@
+# Library to calculate chi2_contingency scores
+from scipy import stats as ss
+
+# Function to calculate cramer's V value between two columns
+def cramersV2(df, col1, col2):
+    confusion_matrix = pd.crosstab(df[col1], df[col2])
+    chi2 = ss.chi2_contingency(confusion_matrix)[0]
+    n = confusion_matrix.sum().sum()
+    phi2 = chi2/n
+    r,k = confusion_matrix.shape
+    phi2corr = max(0, phi2-((k-1)*(r-1))/(n-1))
+    rcorr = r-((r-1)**2)/(n-1)
+    kcorr = k-((k-1)**2)/(n-1)
+    return np.sqrt(phi2corr/min((kcorr-1),(rcorr-1)))
+
+# Function to calculate confuction matrix
+def cramersV(df):
+    dict_1 = {}
+    dict_1 = {col1: {col2: cramersV2(df, col1, col2) for col2 in df.columns} for col1 in df.columns}
+    return pd.DataFrame(dict_1)

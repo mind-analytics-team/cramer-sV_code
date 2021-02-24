@@ -8,7 +8,7 @@ Output: confusion matrix dataframe
 eg: confusion_df = cramersV(test_df)
     
     output: 
-                    ClmDiagnosisCode_1	ClmDiagnosisCode_2	ClmDiagnosisCode_3
-ClmDiagnosisCode_1	1.000000	          0.176665	          0.187273
-ClmDiagnosisCode_2	0.176665	          1.000000	          0.115215
-ClmDiagnosisCode_3	0.187273	          0.115215	          1.000000
+                        ClmDiagnosisCode_1	ClmDiagnosisCode_2	ClmDiagnosisCode_3
+    ClmDiagnosisCode_1	1.000000	          0.176665	          0.187273
+    ClmDiagnosisCode_2	0.176665	          1.000000	          0.115215
+    ClmDiagnosisCode_3	0.187273	          0.115215	          1.000000
